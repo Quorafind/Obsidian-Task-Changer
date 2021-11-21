@@ -1,0 +1,157 @@
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  40% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu.taskChangerContainer {
+  position: fixed;
+  width: 140px;
+  max-width: 225px;
+  max-height: 180px;
+  z-index: var(--layer-menu);
+  display: inline-block;
+  user-select: none;
+  overflow: hidden;
+}
+
+.menu.taskChangerContainer {
+  min-width: 140px;
+  max-width: 225px;
+  max-height: 180px;
+  padding-left: 0em;
+  padding: 0;
+  margin: 0 auto;
+  border-radius: 6px;
+  font-size: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  animation: fade 300ms ease-in-out;
+  background-color: var(--background-primary);
+  box-shadow: 0px 3px 25px rgba(31, 38, 135, 0.1);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.menu.taskChangerContainer div {
+  padding: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+  text-align: left;
+  list-style-type: none;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.menu.taskChangerContainer div:last-child {
+  border-bottom: none;
+}
+
+/*----------------------------------------------------------------
+  SETTINGS TAB
+  ----------------------------------------------------------------*/
+
+button.taskChangerSettingsButton {
+  padding: 4px 14px;
+  border-radius: 6px;
+  height: fit-content;
+  align-self: center;
+}
+
+button.taskChangerSettingsButton svg {
+  width: 1.3em;
+  height: 1.3em;
+  display: flex;
+}
+
+.taskChanger-settings-color {
+  width: 84%;
+  color: var(--text-normal);
+}
+.taskChanger-settings-value {
+  display: none;
+}
+
+.taskChangerplugin-setting-item {
+  display: block;
+}
+
+.taskChangerplugin-setting-item .setting-item-control {
+  justify-content: space-between;
+  margin-top: 12px;
+  align-items: normal;
+}
+
+.modal.mod-settings
+  button:not(.mod-cta):not(.mod-warning).taskChangerSettingsButton.taskChangerSettingsButtonAdd,
+button:not(.mod-cta):not(.mod-warning).taskChangerSettingsButton.taskChangerSettingsButtonAdd {
+  background-color: var(--interactive-accent);
+}
+
+.modal.mod-settings
+  button:not(.mod-cta):not(.mod-warning).taskChangerSettingsButton.taskChangerSettingsButtonDelete,
+button:not(.mod-cta):not(.mod-warning).taskChangerSettingsButton.taskChangerSettingsButtonDelete {
+  background-color: #989cab;
+}
+
+/**/
+.taskChanger-setting-icon {
+  display: flex;
+  height: 24px;
+  width: 24px;
+}
+
+.taskChanger-item-draggable {
+  cursor: grab;
+  display: grid;
+  grid-template-columns: 0.5fr 7fr;
+  align-items: center;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.taskChangerSettingsTabsContainer {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.setting-item.taskChanger-setting-item:first-child {
+  padding-top: 18px;
+}
+
+.taskChanger-setting-item {
+  padding: 18px 0 18px 0;
+  border-top: none;
+}
+
+.taskChanger-sortable-fallback {
+  cursor: grabbing;
+  box-shadow: 0px 3px 32px rgb(31 38 135 / 15%);
+}
+
+.taskChanger-sortable-grab {
+  cursor: grabbing !important;
+}
+
+.taskChanger-sortable-ghost {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.taskChanger-sortable-chosen {
+  cursor: grabbing;
+  padding: 0 0 0 18px;
+  background-color: var(--background-primary);
+}
+
+.taskChanger-sortable-drag {
+  cursor: grabbing;
+  box-shadow: 0px 3px 32px rgb(31 38 135 / 15%);
+}

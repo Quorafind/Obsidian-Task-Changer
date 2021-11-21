@@ -1,0 +1,33 @@
+{
+  "name": "taskChanger-plugin",
+  "version": "0.0.1",
+  "description": "Change task status by one click",
+  "main": "main.js",
+  "scripts": {
+    "dev": "rollup --config rollup.config.js -w",
+    "build": "rollup --config rollup.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/node": "^14.14.37",
+    "@types/sortablejs": "^1.10.7",
+    "obsidian": "^0.12.6",
+    "rollup": "^2.32.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@simonwep/pickr": "^1.8.2",
+    "copy": "^0.3.2",
+    "dotenv": "^10.0.0",
+    "react": "^17.0.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "sortablejs": "^1.14.0"
+  }
+}
