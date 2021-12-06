@@ -1,7 +1,7 @@
 {
   "id": "taskChanger-plugin",
   "name": "Task Changer",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "minAppVersion": "0.12.8",
   "description": "Just a way to change task status quickly",
   "author": "Boninall",

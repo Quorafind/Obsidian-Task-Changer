@@ -1,7 +1,7 @@
 {
   "name": "taskChanger-plugin",
-  "version": "0.0.1",
-  "description": "Change task status by one click",
+  "version": "1.1.1",
+  "description": "taskChanger is a plugin that adds a simple highlighting modal for better multi-colored highlighting support 🎨.",
   "main": "main.js",
   "scripts": {
     "dev": "rollup --config rollup.config.js -w",
