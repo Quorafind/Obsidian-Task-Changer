@@ -1,6 +1,13 @@
 import type taskChangerPlugin from "src/plugin/main";
+
 import { App, Menu, Notice,Editor} from "obsidian";
 import { TaskSettings } from "src/settings/settingsData";
+
+export interface Coords {
+  top: number;
+  left: number;
+  bottom: number;
+}
 
 const taskChangerMenu = (
   app: App,
@@ -46,9 +53,26 @@ const taskChangerMenu = (
       taskButtonText.setAttribute("style", "font-weight: 400;");
     });
 
+    const cursor = editor.getCursor('from');
+    const line = editor.getLine(cursor.line);
+
+    let coords: Coords;
+
+    // Get the cursor position using the appropriate CM5 or CM6 interface
+    if ((editor as any).cursorCoords) {
+        coords = (editor as any).cursorCoords(true, 'window');
+    } else if ((editor as any).coordsAtPos) {
+        const offset = editor.posToOffset(cursor);
+        coords = (editor as any).cm.coordsAtPos?.(offset) ?? (editor as any).coordsAtPos(offset);
+    } else {
+        return;
+    }
+
+    console.log(coords);
+
     menu.showAtPosition({
-      x: evt.x - 30,
-      y: evt.y - 15,
+      x: coords.left,
+      y: coords.top,
     });
   } else {
     new Notice("Focus must be in editor");
