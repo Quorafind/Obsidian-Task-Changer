@@ -9,7 +9,7 @@ export default function contextMenu(
   menu: Menu,
   editor: Editor,
   plugin: taskChangerPlugin,
-  settings: TaskSettings
+  settings: TaskSettings,
 ): void {
 
   menu.addItem((item) => {
@@ -18,8 +18,8 @@ export default function contextMenu(
     item
       .setTitle("Change Task Status")
       .setIcon("changeTaskStatus")
-      .onClick(async (_) => {
-        taskChangerMenu(app, plugin, settings);
+      .onClick(async (evt: MouseEvent) => {
+        taskChangerMenu(app, plugin, settings, editor,evt);
       });
   });
 }

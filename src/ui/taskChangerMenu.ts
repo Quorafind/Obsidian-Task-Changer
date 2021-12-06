@@ -1,19 +1,19 @@
 import type taskChangerPlugin from "src/plugin/main";
-import { App, Menu, MarkdownView } from "obsidian";
+import { App, Menu, Notice,Editor} from "obsidian";
 import { TaskSettings } from "src/settings/settingsData";
 
-export default function taskChangerMenu(
+const taskChangerMenu = (
   app: App,
   plugin: taskChangerPlugin,
-  settings: TaskSettings
-) {
-  const activeView = app.workspace.getActiveViewOfType(MarkdownView);
-
-  if (activeView && activeView.editor.hasFocus()) {
-    const selection = document.getSelection();
-    const selectionContainer = selection.getRangeAt(0)
-      .commonAncestorContainer as HTMLElement;
-    const selectionRect = selectionContainer.getClientRects()[0];
+  settings: TaskSettings,
+  editor: Editor,
+  evt: MouseEvent,
+): void => {
+  if (editor && editor.hasFocus()) {
+    // const selection = document.getSelection();
+    // const selectionContainer = selection.getRangeAt(0)
+    //   .commonAncestorContainer as HTMLElement;
+    // const selectionRect = selectionContainer.parentElement.getClientRects()[0];
     const menu = new Menu(plugin.app).addItem((item) => {
       const itemDom = (item as any).dom as HTMLElement;
       itemDom.setAttribute("style", "display: none");
@@ -47,10 +47,12 @@ export default function taskChangerMenu(
     });
 
     menu.showAtPosition({
-      x: selectionRect.right + 5,
-      y: selectionRect.top + 15,
+      x: evt.x - 30,
+      y: evt.y - 15,
     });
   } else {
-    return;
+    new Notice("Focus must be in editor");
   }
 }
+
+export default taskChangerMenu;

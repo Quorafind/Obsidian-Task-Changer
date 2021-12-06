@@ -34,7 +34,7 @@ export default class taskChangerPlugin extends Plugin {
   app: App;
   editor: Editor;
   settings: TaskSettings;
-
+  evt: MouseEvent;
   async onload() {
     console.log("taskChanger v" + this.manifest.version + " loaded");
     addIcons();
@@ -49,7 +49,7 @@ export default class taskChangerPlugin extends Plugin {
       icon: "changeTaskStatus",
       callback: async () => {
         !document.querySelector(".menu.taskChangerContainer")
-          ? taskChangerMenu(this.app, this, this.settings)
+          ? taskChangerMenu(this.app, this, this.settings,this.editor, this.evt)
           : true;
       },
     });
@@ -130,7 +130,6 @@ export default class taskChangerPlugin extends Plugin {
       return;
     }
     const selection = getSelection(editor);
-    const { content } = selection;
     // const cprefix = prefix;
 
     (add || this.addPrefix)({
