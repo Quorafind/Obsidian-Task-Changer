@@ -34,11 +34,11 @@ Download the latest release. Extract and put the three files (main.js, manifest.
 
 # Known issues
 
-- Number list is not yet supported.
-- Self config(like remove or add or DND) is not yet supported.
-- Live Preview Mode is not yet supported.
-- Keyboard is not yet supported(but support hotkey).
-- Limited to a few specific themes.
+- [ ] Number list is not yet supported.
+- [ ] Self config(like remove or add or DND) is not yet supported.
+- [X] Live Preview Mode is not yet supported.
+- [ ] Keyboard is not yet supported(but support hotkey).
+- [ ] Limited to a few specific themes.
 
 # Say Thank You
 
