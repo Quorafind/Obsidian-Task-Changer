@@ -38,8 +38,12 @@ Download the latest release. Extract and put the three files (main.js, manifest.
 - [ ] Self config(like remove or add or DND) is not yet supported.
 - [X] Live Preview Mode is not yet supported.
 - [ ] Keyboard is not yet supported(but support hotkey).
-- [ ] Limited to a few specific themes.
+- [X] Limited to a few specific themes.
 
 # Say Thank You
 
 v0.0.1 code is highly based on [Highlightr-plugin](https://github.dev/chetachiezikeuzor/Highlightr-Plugin) AND [Format-Key-Plugin](https://github.dev/anstosa/format-hotkeys-obsidian), so please say thanks to them.
+
+If you are enjoying new version of Task Changer then please support my work and enthusiasm by buying me a coffee on [https://www.buymeacoffee.com/boninall](https://www.buymeacoffee.com/boninall).
+
+<a href="https://www.buymeacoffee.com/boninall"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=boninall&button_colour=6495ED&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
